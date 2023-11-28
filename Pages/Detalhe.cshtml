@@ -1,0 +1,27 @@
+﻿@page
+@model AjCorpWebApp.Pages.DetalheModel
+@{
+}
+
+<h2 class="my-3">@Model.Produto.Nome</h2>
+<div class="row">
+	<div class="col-4">
+		<img class="img-fluid rounded" src="@Model.Produto.ImagemUri" />
+	</div>
+	<div class="col-6">
+		<h4 class="my-3">Sobre:</h4>
+		<p>@Model.Produto.Descricao</p>
+		<h4 class="my-3">Mais info</h4>
+		<ul>
+			<li><label asp-for="Produto.Preco"></label>: @Html.DisplayFor(model => model.Produto.Preco)</li>
+			<li><label asp-for="Produto.Duracao"></label>: @Model.Produto.Duracao</li>
+			<li><label asp-for="Produto.Inicio"></label>: @Model.Produto.InicioEditado</li>
+			@if (Model.Marca is not null)
+			{
+				<li><label asp-for="Produto.MarcaId"></label>:  @Html.DisplayFor(model => model.Marca.Descricao)</li>
+			}
+			
+		</ul>
+		<a class="btn my-3 btn-primary" asp-page="Edit" asp-route-id="@Model.Produto.ProdutoId">Editar</a>
+	</div>
+</div>

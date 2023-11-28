@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "AJ Consulting";
+}
+
+<div class="text-center">
+    <br />
+    <br />
+    <h1 class="display-4">AJ Consulting...</h1><br />
+    <p>
+        <b>
+            <i>
+                <br />"Prepare-se para a jornada rumo à excelência e aos resultados excepcionais.
+                Aqui, não admitimos nada menos do que o máximo de você!"
+            </i>
+        </b>
+        <h2><br />Tudo o que voce necessitra para se auto-desenvolver...</h2>
+    </p>
+</div>
+
+<div class="row justify-content-md-center">
+    @foreach(var item in Model.ListaProduto)
+    {
+        <div class="card col-3 m-3">
+        <img src="@item.ImagemUri" class="p-3" 
+            style="border-radius: 25px"/>
+        <div class="card-body">
+            <h5 class="card-title">@item.Nome</h5>
+            <p class="card-text">@item.Descricao</p>
+                <a class="btn btn-primary"  asp-page="/Detalhe" asp-route-id="@item.ProdutoId">Ver mais</a>
+        </div>
+    </div>
+    }
+    
+</div>
