@@ -1,11 +1,13 @@
 using AjCorpWebApp.Models;
 using AjCorpWebApp.Servicos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AjCorpWebApp.Pages
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
 

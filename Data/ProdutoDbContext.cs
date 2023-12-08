@@ -1,9 +1,10 @@
 ﻿using AjCorpWebApp.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AjCorpWebApp.Data;
 
-public class ProdutoDbContext : DbContext
+public class ProdutoDbContext : IdentityDbContext
 {
     public DbSet<Produto> Produto { get; set; }
 	public DbSet<Marca> Marca { get; set; }

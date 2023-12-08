@@ -1,12 +1,15 @@
 using AjCorpWebApp.Models;
 using AjCorpWebApp.Servicos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AjCorpWebApp.Pages;
 
-    public class EditModel : PageModel
+
+[Authorize]
+public class EditModel : PageModel
     {
 
 	private IProdutoServico _servico;

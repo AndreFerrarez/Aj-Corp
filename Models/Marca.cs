@@ -7,6 +7,6 @@ public class Marca
     public string Descricao { get; set; }
 
 
-    public ICollection<Produto> Produtos { get; set; }
+    public ICollection<Produto>? Produtos { get; set; }
 
 }
